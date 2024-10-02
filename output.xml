@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.12.2 on win32)" generated="2024-10-02T09:29:46.330964" rpa="false" schemaversion="5">
+<suite id="s1" name="robotTest" source="C:\Users\User\Downloads\Jenkins\robotTest\robotTest.robot">
+<test id="s1-t1" name="Test True when X is 1" line="5">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-10-02T09:29:46.624782" level="INFO">Creating Session using : alias=myapi, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>myapi</arg>
+<arg>http://127.0.0.1:5000</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-10-02T09:29:46.624782" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-10-02T09:29:46.628687" level="INFO">GET Request : url=http://127.0.0.1:5000/mul5/1 
+ path_url=/mul5/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-10-02T09:29:46.628687" level="INFO">GET Response : url=http://127.0.0.1:5000/mul5/1 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.3 Python/3.12.2', 'Date': 'Wed, 02 Oct 2024 02:29:46 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '3', 'Connection': 'close'} 
+ body=5.0 
+ </msg>
+<msg time="2024-10-02T09:29:46.628687" level="INFO">${result} = &lt;Response [200]&gt;</msg>
+<var>${result}</var>
+<arg>myapi</arg>
+<arg>/mul5/1</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-10-02T09:29:46.624782" elapsed="0.003905"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-10-02T09:29:46.629664" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result.json()}</arg>
+<arg>5.0</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-02T09:29:46.628687" elapsed="0.000977"/>
+</kw>
+<doc>ใส่เลข 1</doc>
+<status status="PASS" start="2024-10-02T09:29:46.623806" elapsed="0.005858"/>
+</test>
+<test id="s1-t2" name="Test False when X is neg10" line="11">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-10-02T09:29:46.629664" level="INFO">Creating Session using : alias=myapi, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>myapi</arg>
+<arg>http://127.0.0.1:5000</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-10-02T09:29:46.629664" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-10-02T09:29:46.633127" level="INFO">GET Request : url=http://127.0.0.1:5000/mul5/-10 
+ path_url=/mul5/-10 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-10-02T09:29:46.633127" level="INFO">GET Response : url=http://127.0.0.1:5000/mul5/-10 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.3 Python/3.12.2', 'Date': 'Wed, 02 Oct 2024 02:29:46 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '5', 'Connection': 'close'} 
+ body=-50.0 
+ </msg>
+<msg time="2024-10-02T09:29:46.633127" level="INFO">${result} = &lt;Response [200]&gt;</msg>
+<var>${result}</var>
+<arg>myapi</arg>
+<arg>/mul5/-10</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-10-02T09:29:46.629664" elapsed="0.003463"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-10-02T09:29:46.634104" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result.json()}</arg>
+<arg>-50.0</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-02T09:29:46.633127" elapsed="0.000977"/>
+</kw>
+<doc>ใส่เลข -10</doc>
+<status status="PASS" start="2024-10-02T09:29:46.629664" elapsed="0.004440"/>
+</test>
+<test id="s1-t3" name="Test True when X is 1dot5" line="17">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-10-02T09:29:46.635080" level="INFO">Creating Session using : alias=myapi, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>myapi</arg>
+<arg>http://127.0.0.1:5000</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-10-02T09:29:46.635080" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-10-02T09:29:46.638987" level="INFO">GET Request : url=http://127.0.0.1:5000/mul5/1.5 
+ path_url=/mul5/1.5 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2024-10-02T09:29:46.638987" level="INFO">GET Response : url=http://127.0.0.1:5000/mul5/1.5 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.0.3 Python/3.12.2', 'Date': 'Wed, 02 Oct 2024 02:29:46 GMT', 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': '3', 'Connection': 'close'} 
+ body=7.5 
+ </msg>
+<msg time="2024-10-02T09:29:46.638987" level="INFO">${result} = &lt;Response [200]&gt;</msg>
+<var>${result}</var>
+<arg>myapi</arg>
+<arg>/mul5/1.5</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2024-10-02T09:29:46.636057" elapsed="0.002930"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-10-02T09:29:46.639962" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result.json()}</arg>
+<arg>7.5</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-10-02T09:29:46.638987" elapsed="0.000975"/>
+</kw>
+<doc>ใส่เลข 1.5</doc>
+<status status="PASS" start="2024-10-02T09:29:46.635080" elapsed="0.004882"/>
+</test>
+<status status="PASS" start="2024-10-02T09:29:46.332946" elapsed="0.307016"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="robotTest">robotTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
